@@ -1,0 +1,172 @@
+.job_filter{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.sideBar{
+    flex: 3;
+    height: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.job-cards-container{
+    flex:7;
+}
+
+.social-card{
+    position:sticky;
+    height: 100%;
+    top: 0;
+    flex: 2;
+}
+
+.filter-button{
+    display: none;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 8px;
+    border: none;
+    background-color: #00ABE4;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+  }
+  
+  .page-number {
+    padding: 11px 20px;
+    background-color: #f0f0f0;
+    
+  }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+
+    .filterSm{
+        display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
+      
+      
+    }
+    .job_filter {
+        flex-direction: column;
+    }
+
+    .sideBar{
+        display: none;
+    }
+
+    .job-cards {
+        width: 100%; /* Full width of the container */
+        display: flex;
+        flex-direction: column;
+        gap: 16px; /* Adjust spacing between job cards as needed */
+    }
+
+    .social-card {
+        width: 100%; /* Full width of the container */
+        margin-top: 16px; /* Adjust spacing as needed */
+        
+    }
+
+    /* Optional: Style for a filter button if needed */
+    .filter-button {
+        display: block;
+         /* Center the button horizontally and add margin */
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #00ABE4; /* Adjust the background color */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    .filter-button:hover {
+        background-color: #0091d2; /* Darker shade on hover */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .filterSm{
+        display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    .job_filter {
+        flex-direction: column; /* Switch back to row direction */
+        justify-content: space-between; /* Adjust spacing between filters */
+    }
+
+    .sideBar {
+        /* Show sidebar on medium screens */
+        display: none;
+        width: 25%; /* Adjust width as needed */
+        /* Add additional styling for the sidebar here */
+    }
+
+    .job-cards {
+        width: 100%; /* Adjust width to accommodate sidebar */
+        display: flex;
+        flex-direction: column;
+         /* Adjust spacing between job cards as needed */
+    }
+
+    .social-card {
+       
+        margin-top: 10px; /* Adjust spacing as needed */
+    }
+
+    .filter-button {
+        display: block;
+        /* Center the button horizontally and add margin */
+        padding: 10px 20px;
+        font-size: 1rem;
+        background-color: #00ABE4; /* Adjust the background color */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-align: center;
+    }
+    
+    .filter-button:hover {
+        background-color: #0091d2; /* Darker shade on hover */
+    }
+}
+
+
+
+@media (min-width: 1025px) {
+
+    .sideBarForSmall{
+        display: none;
+    }
+
+    .filterSm{
+        display: none;
+    }
+  
+    .sideBar {
+      display: block; /* Show sidebar on laptop screens and larger */
+    }
+  }

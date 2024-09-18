@@ -1,0 +1,126 @@
+/* src/navbar.css */
+header {
+    background-color: #003A64; /* White background for the navbar */
+    padding: 13px 80px; /* Add some padding for spacing */
+    position: relative; /* Needed for positioning the hamburger */
+  }
+  
+  .header__main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .logo{
+    color:white !important; 
+  }
+  
+  .header__main-nav__logo h1 {
+    margin: 0;
+  }
+  
+  .header__hamburger {
+    display: none; /* Hidden by default, shown on smaller screens */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white; /* Dark blue-grey for hamburger icon */
+    cursor: pointer;
+    z-index: 10; /* Ensure it is above other elements */
+  }
+  
+  .header__main-nav__links {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .header__main-nav__links li {
+    margin: 0 15px; /* Add spacing between the nav items */
+  }
+  
+  .header__main-nav__links a {
+    font-family: 'Kanit', sans-serif; /* Apply Kanit font family */
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white; /* Dark blue-grey color */
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+  .header__main-nav__links a:hover {
+    color: #00ABE4; /* Bright blue color on hover */
+  }
+  
+  /* Button styles */
+  .btn {
+    background-color: #00ABE4; /* Bright blue for button background */
+    color: #FFFFFF !important; /* White text color for buttons */
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'Kanit', sans-serif;
+    text-transform: uppercase;
+    margin: 0 5px;
+    display: inline-block;
+  }
+  
+  /* Responsive design for mobile devices */
+  @media (max-width: 768px) {
+    .header__main-nav__links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 55px; /* Adjust based on your header height */
+      left: 0;
+      right: 0;
+      background-color: #003A64; /* White background for the dropdown */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      padding: 20px;
+      z-index: 9; /* Ensure it is below the hamburger */
+    }
+  
+    .header__main-nav__links.open {
+      transform: translateY(0);
+    }
+
+    .nav_links_div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-btn{
+        width: 200px;
+        text-align: center;
+    }
+
+    .link_buttons{
+        margin-top: 180px;
+        padding: 5px;
+    }
+  
+    .header__hamburger {
+      display: block; /* Show hamburger on smaller screens */
+    }
+  
+    .header__main-nav__links li {
+      margin: 10px 0; /* Adjust margin for vertical stack */
+    }
+  }
+  
+  /* Hide navigation links by default on smaller screens */
+  @media (max-width: 768px) {
+    .header__main-nav__links {
+      display: none;
+    }
+  
+    .header__main-nav__links.open {
+      display: flex;
+    }
+  }

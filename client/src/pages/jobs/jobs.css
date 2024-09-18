@@ -1,0 +1,14 @@
+.jobDetails{
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+
+.Details{
+    flex:9;
+}
+
+.Bars{
+    flex:3;
+}

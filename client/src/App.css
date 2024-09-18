@@ -1,0 +1,30 @@
+/* Importing the Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Importing the Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; 
+    background-color: #E9F1FA; 
+    color: #3b5169; 
+    font-family: 'Montserrat', sans-serif; 
+}
+
+
+h1, h2 {
+  color: #233550; 
+  font-family: 'Montserrat', sans-serif; 
+}
+
+p {
+  color: #3b5169; 
+}
+
+
+
+

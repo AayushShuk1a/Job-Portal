@@ -1,0 +1,115 @@
+.btn {
+    font-family: 'Montserrat', sans-serif; /* Ensure buttons use Montserrat */
+  }
+  
+  .card {
+    font-family: 'Montserrat', sans-serif; /* Ensure cards use Montserrat */
+  }
+
+.App {
+    text-align: center;
+}
+
+
+/* Button styles */
+.button-group {
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: #00ABE4; /* Bright blue for button background */
+    color: #FFFFFF; /* White text color for buttons */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-family: 'Roboto', sans-serif; /* Ensure buttons use Roboto */
+}
+
+.btn:hover {
+    background-color: #0089C0; /* Slightly darker bright blue on hover */
+}
+
+/* Section and Image styles */
+.section {
+    margin: 40px 0;
+}
+
+.section img {
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 8px;
+}
+
+/* Card styles */
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #FFFFFF; /* White for card background */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    color: #3b5169; /* Medium blue-grey text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 40px);
+    font-family: 'Roboto', sans-serif; /* Ensure cards use Roboto */
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card h3 {
+    margin-top: 10px;
+    color: #233550; /* Dark blue for card titles */
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
+
+/* Geometric Shapes */
+.geometric-shape {
+    position: absolute;
+    background: #00ABE4; /* Bright blue for geometric shapes */
+    opacity: 0.5; /* Semi-transparent */
+    border-radius: 50%; /* Circle shape */
+}
+
+.shape-1 {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    left: 10%;
+}
+
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    right: 10%;
+    background: #E9F1FA; /* Light blue for some shapes */
+}
+
+.shape-3 {
+    width: 200px;
+    height: 200px;
+    bottom: 10%;
+    left: 50%;
+    background: #0089C0; /* Slightly darker bright blue for some shapes */
+}

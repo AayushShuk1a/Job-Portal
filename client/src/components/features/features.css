@@ -1,0 +1,98 @@
+.container {
+    padding: 50px;
+    align-items: center;
+    
+  }
+  
+  .content {
+    padding: 0 50px;
+  }
+  
+  .header {
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #00ABE4; /* Indigo color */
+  }
+  
+  .header .title {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #111827; /* Dark gray */
+  }
+  
+  .header .description {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #6b7280; /* Gray */
+  }
+  
+  .features {
+    margin-top: 55px;
+  }
+  
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 40px;
+    
+    margin: 0 auto;
+  }
+  
+  @media (min-width: 1024px) {
+    .feature-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .content {
+        padding: 0 100px;
+      }
+  }
+  
+  .feature-item {
+    position: relative;
+    
+  }
+  
+  .feature-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827; /* Dark gray */
+    margin-left: 60px;
+  }
+  
+  .icon-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: #00ABE4; /* Indigo color */
+  }
+  
+  .feature-icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+  
+  .feature-description {
+    margin-top: 5px;
+    margin-left: 60px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #6b7280; /* Gray */
+  }
+  
