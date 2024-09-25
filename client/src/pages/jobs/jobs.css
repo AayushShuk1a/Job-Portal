@@ -1,14 +1,49 @@
-.jobDetails{
-    padding: 20px 80px;
+.jobDetails {
+    padding: 40px 80px; /* Adjusted for smaller padding */
     display: flex;
     flex-direction: row;
     font-weight: bold;
+    gap: 20px; /* Adds some gap between columns */
 }
 
-.Details{
-    flex:9;
+.Details {
+    flex: 9;
 }
 
-.Bars{
+.Bars {
     flex: 3;
+}
+
+/* Make it responsive */
+@media (max-width: 1200px) {
+    .jobDetails {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .Details, .Bars {
+        flex: 1;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .jobDetails {
+        padding: 15px;
+    }
+
+    .Details, .Bars {
+        width: 100%; /* Make each div take full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .jobDetails {
+        padding: 10px;
+        font-size: 14px; /* Adjust text size for smaller screens */
+    }
+
+    .Bars {
+        margin-top: 20px; /* Add some spacing between sections */
+    }
 }

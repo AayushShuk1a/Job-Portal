@@ -4,11 +4,9 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'; // Unmarked
 import BookmarkIcon from '@mui/icons-material/Bookmark'; // Marked icon
 import { Stepper, Step, StepLabel } from '@mui/material';
 
-
 // Component for job progress
-const JobProgress = ({ jobStage }) => {
+const JobProgress = ({ jobStage, completionDates }) => {
   const steps = ['Forms Open', 'Test Out', 'Interview', 'Job Closed'];
-
 
   const [marked, setMarked] = useState(false);
 
@@ -32,67 +30,87 @@ const JobProgress = ({ jobStage }) => {
   };
 
   return (
-    <Card 
-      sx={{ 
-        maxWidth: 800, 
-        mx: 'auto', 
-        my: 0.5, 
-         
-        backgroundColor: '#f5f5f5', 
-        borderRadius: 2, 
-        boxShadow: 2,
-        border: '1px solid #e0e0e0'
+    <Card
+      sx={{
+        width: '100%',
+        
+        my: 0.5,
+        p:2
       }}
     >
       <CardContent>
-      <Box display="flex" alignItems="center" justifyContent="space-between">
-          <Typography 
-            variant="h6" 
-            sx={{ 
-              fontWeight: 'medium', 
-              color: '#0d47a1', 
-              fontSize: '1.1rem' 
+        <Box display="flex" alignItems="center" justifyContent="space-between">
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 'medium',
+              color: '#0d47a1',
+              fontSize: '1.1rem',
             }}
           >
             Mark this Job
           </Typography>
-          <IconButton onClick={handleMarkJob} sx={{ fontSize: 30, color: marked ? '#1976d2' : '#757575' }}>
+          <IconButton
+            onClick={handleMarkJob}
+            sx={{ fontSize: 30, color: marked ? '#1976d2' : '#757575' }}
+          >
             {marked ? <BookmarkIcon sx={{ fontSize: 30 }} /> : <BookmarkBorderIcon sx={{ fontSize: 30 }} />}
           </IconButton>
         </Box>
         <Divider orientation="horizontal" flexItem sx={{ mx: 1 }} />
-        <Grid container spacing={2} sx={{display:'flex',justifyContent:'center',mt:'8px'}}>
-          <Grid item xs={6}>
-            <Stepper 
-              activeStep={getActiveStep()} 
-              orientation="vertical" 
-              sx={{ 
-                
-                '& .MuiStepLabel-root': { 
-                  '& .Mui-active': { 
+        <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', mt: '8px' }}>
+          <Grid item xs={12}>
+            <Stepper
+              activeStep={getActiveStep()}
+              orientation="vertical"
+              sx={{
+                '& .MuiStepLabel-root': {
+                  alignItems: 'flex-start',
+                  '& .Mui-active': {
                     color: '#1976d2',
                     fontWeight: 'bold',
                   },
                   '& .Mui-completed': {
-                    color: '#4caf50',
-                    fontWeight: 'bold'
+                    color: '#00ABE4',
+                    fontWeight: 'bold',
                   },
                   '& .MuiStepLabel-label': {
                     color: '#424242',
-                    fontSize: '0.95rem'
-                  }
-                }
+                    fontSize: '0.95rem',
+                  },
+                },
               }}
             >
-              {steps.map((label) => (
+              {steps.map((label, index) => (
                 <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
+                  <StepLabel>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                      }}
+                    >
+                      <Typography
+                        variant="body1"
+                        sx={{ fontWeight: index <= getActiveStep() ? 'bold' : 'normal' }}
+                      >
+                        {label}
+                      </Typography>
+                      {index <= getActiveStep() && completionDates[index] && (
+                        <Typography
+                          variant="body1"
+                          sx={{ color: '#757575', fontWeight: 'normal' }}
+                        >
+                          ({completionDates[index]})
+                        </Typography>
+                      )}
+                    </Box>
+                  </StepLabel>
                 </Step>
               ))}
             </Stepper>
           </Grid>
-          
-          
         </Grid>
       </CardContent>
     </Card>
@@ -101,11 +119,12 @@ const JobProgress = ({ jobStage }) => {
 
 // Main ProgressBar component
 export default function ProgressBar() {
-  const jobStage = "Interview"; // The current stage of the job
+  const jobStage = 'Interview'; // The current stage of the job
+  const completionDates = ['2024-08-01', '2024-08-05', '2024-08-10', null]; // Dates for completed steps
 
   return (
     <Box sx={{ ml: 4 }}>
-      <JobProgress jobStage={jobStage} />
+      <JobProgress jobStage={jobStage} completionDates={completionDates} />
     </Box>
   );
 }

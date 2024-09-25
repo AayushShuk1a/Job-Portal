@@ -1,20 +1,13 @@
 import React from 'react';
-import { Card, CardContent, Typography, Box, Button,Divider } from '@mui/material';
-import { WhatsApp, Twitter, LinkedIn, Instagram } from '@mui/icons-material';
+import { Button, Box, Card, CardContent, Typography,Divider } from '@mui/material';
+import { Twitter, LinkedIn, WhatsApp, Instagram } from '@mui/icons-material';
 
-const SocialMediaCard = () => {
-  const socialLinks = {
-    facebook: 'https://facebook.com/jobly',
-    twitter: 'https://twitter.com/jobly',
-    linkedin: 'https://linkedin.com/company/jobly',
-    instagram: 'https://instagram.com/jobly'
-  };
-
+const ShareJobs = () => {
   return (
-    <Card elevation={3} sx={{ width: '80%', margin: 'auto', mt: 2, p: 2}}>
+    <Card sx={{ width: '90%', margin: 'auto', mt: 4, p: 2,my:'20px',mx:"30px"}}>
       <CardContent>
         <Typography variant="h6" sx={{ mb: 2, textAlign: 'center' }}>
-          Social Card
+          Share This Job
         </Typography>
         <Divider orientation="horizontal" flexItem sx={{ mx: 1 }} />
         <Box 
@@ -32,7 +25,7 @@ const SocialMediaCard = () => {
             fullWidth
             sx={{ borderColor: '#1DA1F2', color: '#1DA1F2' }}
           >
-            Twitter
+            Share on Twitter
           </Button>
           <Button
             variant="outlined"
@@ -40,7 +33,7 @@ const SocialMediaCard = () => {
             fullWidth
             sx={{ borderColor: '#0077b5', color: '#0077b5' }}
           >
-            LinkedIn
+            Share on LinkedIn
           </Button>
           <Button
             variant="outlined"
@@ -48,7 +41,7 @@ const SocialMediaCard = () => {
             fullWidth
             sx={{ borderColor: '#25D366', color: '#25D366' }}
           >
-            WhatsApp
+            Share on WhatsApp
           </Button>
           <Button
             variant="outlined"
@@ -56,12 +49,12 @@ const SocialMediaCard = () => {
             fullWidth
             sx={{ borderColor: '#E4405F', color: '#E4405F' }}
           >
-           Instagram
+            Share on Instagram
           </Button>
         </Box>
       </CardContent>
     </Card>
   );
-};
+}
 
-export default SocialMediaCard;
+export default ShareJobs;

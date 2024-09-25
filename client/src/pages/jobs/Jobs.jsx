@@ -2,6 +2,7 @@ import React from 'react'
 import JobDetails from './JobDetails'
 import "./jobs.css"
 import ProgressBar from './ProgressBar'
+import ShareJobs from './ShareJobs'
 
 const Jobs = () => {
     return (
@@ -11,6 +12,7 @@ const Jobs = () => {
             </div>
             <div className='Bars'>
                 <ProgressBar/>
+                <ShareJobs/>
             </div>
 
         </div>
