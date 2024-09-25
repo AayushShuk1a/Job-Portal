@@ -7,6 +7,7 @@ import SocialMediaCard from '../components/socialCard/SocialCard'
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import dummyData from "../temp/dummyData.json"
 import Features from '../components/features/Features';
+import Newsletter from '../components/newsletter/Newsletter';
 
 
 
@@ -100,6 +101,7 @@ const Home = () => {
       </div >
       <div>
         <Features/>
+        <Newsletter/>
       </div>
     </>
   )

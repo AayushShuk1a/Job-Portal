@@ -2,8 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Temp from './temp/Temp';
-
-// Import other components here
 import Home from './pages/Home';
 import Navbar from './components/navbar/Navbar';
 import Jobs from './pages/jobs/Jobs';
@@ -24,7 +22,7 @@ function App() {
         <Route path="/jobdetails" element={<Jobs />} />
         
       </Routes>
-      <Newsletter/>
+      
       <Footer/>
     </Router>
   );

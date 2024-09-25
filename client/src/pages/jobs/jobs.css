@@ -1,5 +1,5 @@
 .jobDetails{
-    padding: 20px 60px;
+    padding: 20px 80px;
     display: flex;
     flex-direction: row;
     font-weight: bold;
@@ -10,5 +10,5 @@
 }
 
 .Bars{
-    flex:3;
+    flex: 3;
 }
