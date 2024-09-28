@@ -31,12 +31,7 @@ const JobProgress = ({ jobStage, completionDates }) => {
 
   return (
     <Card
-      sx={{
-        width: '100%',
-        
-        my: 0.5,
-        p:2
-      }}
+    sx={{ padding: { xs: 2, sm: 4, md: 6, lg: '20px' }, margin: '0 auto',width:{  lg: '100%' } ,my:2}}
     >
       <CardContent>
         <Box display="flex" alignItems="center" justifyContent="space-between">
@@ -58,7 +53,7 @@ const JobProgress = ({ jobStage, completionDates }) => {
           </IconButton>
         </Box>
         <Divider orientation="horizontal" flexItem sx={{ mx: 1 }} />
-        <Grid container spacing={2} sx={{ display: 'flex', justifyContent: 'center', mt: '8px' }}>
+        <Grid container spacing={2} sx={{width:'100%', display: 'flex', justifyContent: 'center', mt: '8px' }}>
           <Grid item xs={12}>
             <Stepper
               activeStep={getActiveStep()}
@@ -123,7 +118,7 @@ export default function ProgressBar() {
   const completionDates = ['2024-08-01', '2024-08-05', '2024-08-10', null]; // Dates for completed steps
 
   return (
-    <Box sx={{ ml: 4 }}>
+    <Box sx={{ ml:{ xs: 0, sm: 0, md: "20px" }}}>
       <JobProgress jobStage={jobStage} completionDates={completionDates} />
     </Box>
   );

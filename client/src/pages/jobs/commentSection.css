@@ -1,0 +1,82 @@
+/* Basic styling for the comment section */
+.container{
+    width: 100%;
+    padding: 0px;
+    margin-top: 50px;
+}
+.page-width {
+    width: 100%;
+    
+  }
+  
+  /* Card styling */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    width:90%;
+  }
+  
+  .card-body {
+    padding: 5px;
+  }
+  
+  /* Comment text styling */
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 0.75rem;
+  }
+  
+  .list-inline {
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+  
+  .list-inline-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 14px;
+  }
+  
+  .list-inline-item a {
+    text-decoration: none;
+    color: #838091;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .list-inline-item a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darker shade for hover effect */
+  }
+  
+  /* Adjust spacing between the icons and text */
+  .list-inline-item svg {
+    font-size: 18px; /* Size adjustment for icons */
+  }
+  
+  /* Button styling */
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  textarea.form-control {
+    resize: none;
+  }
+  

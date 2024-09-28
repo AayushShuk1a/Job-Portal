@@ -1,9 +1,9 @@
 .jobDetails {
-    padding: 40px 80px; /* Adjusted for smaller padding */
+    padding: 40px 80px; 
     display: flex;
     flex-direction: row;
     font-weight: bold;
-    gap: 20px; /* Adds some gap between columns */
+    gap: 20px; 
 }
 
 .Details {
@@ -35,6 +35,11 @@
     .Details, .Bars {
         width: 100%; /* Make each div take full width */
     }
+
+    .Bars{
+        padding: 0;
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -45,5 +50,6 @@
 
     .Bars {
         margin-top: 20px; /* Add some spacing between sections */
+        
     }
 }
