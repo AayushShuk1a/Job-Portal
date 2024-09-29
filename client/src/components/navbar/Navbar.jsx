@@ -1,5 +1,6 @@
 // src/Navbar.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './navbar.css';
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
             &#9776; {/* Hamburger icon */}
           </button>
           <ul className={`header__main-nav__links ${isOpen ? 'open' : ''}`}>
-            <li><a href="/temp" onClick={toggleMenu}>Home</a></li>
+            <li><a href="/" onClick={toggleMenu}>Home</a></li>
             <li><a href="#about" onClick={toggleMenu}>About</a></li>
             <li><a href="#services" onClick={toggleMenu}>Services</a></li>
             <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
@@ -27,7 +28,7 @@ const Navbar = () => {
           </ul>
 
           <ul className={`header__main-nav__links link_buttons ${isOpen ? 'open' : ''}`}>
-            <li><a href="#login" className="btn login-btn">Login</a></li>
+            <li><Link to="/register" className="btn login-btn">Login</Link></li>
           </ul>
         </nav>
       </header>

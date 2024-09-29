@@ -99,7 +99,7 @@ const Home = () => {
 
 
       </div >
-      <div>
+      <div >
         <Features/>
         <Newsletter/>
       </div>

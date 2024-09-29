@@ -8,10 +8,13 @@
 
 .Details {
     flex: 9;
+    
 }
 
 .Bars {
     flex: 3;
+    
+    
 }
 
 /* Make it responsive */
@@ -23,6 +26,8 @@
     .Details, .Bars {
         flex: 1;
     }
+
+    
 }
 
 
@@ -39,6 +44,7 @@
     .Bars{
         padding: 0;
         width: 100%;
+        position: static;
     }
 }
 

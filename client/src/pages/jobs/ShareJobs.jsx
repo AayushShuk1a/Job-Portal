@@ -4,7 +4,7 @@ import { Twitter, LinkedIn, WhatsApp, Instagram } from '@mui/icons-material';
 
 const ShareJobs = () => {
   return (
-    <Card sx={{ padding: { xs: 2, sm: 4, md: 6, lg: '20px' }, margin: '0 auto',width:{  lg: '93%' },ml:{ xs: 0, sm: 0, md: "20px" } }}>
+    <Card sx={{position:'sticky',top:'20px', padding: { xs: 2, sm: 4, md: 6, lg: '20px' }, margin: '0 auto',width:{  lg: '93%' },ml:{ xs: 0, sm: 0, md: "20px" } }}>
       <CardContent>
         <Typography variant="h6" sx={{ mb: 2, textAlign: 'center' }}>
           Share This Job

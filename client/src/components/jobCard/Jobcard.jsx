@@ -50,8 +50,8 @@ const JobCard = ({ job, onClick }) => {
           </Typography>
 
           {/* Job Type, Salary, Experience with Border Styling */}
-          <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
-            <Paper elevation={0} sx={{ padding: '3px', display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '120px', border: '1px solid #00ABE4' ,transition: 'transform 0.2s ease, box-shadow 0.2s ease', '&:hover': {
+          <Box sx={{ display: 'flex', gap: { xs: 1, sm: 1, md: 2,lg:2 }, flexWrap: 'wrap' }}>
+            <Paper elevation={0} sx={{ padding: { xs: '1px', sm: '1px', md: '3px' }, display: 'flex', flexDirection: 'column', alignItems: 'center', minWidth: '120px', border: '1px solid #00ABE4' ,transition: 'transform 0.2s ease, box-shadow 0.2s ease', '&:hover': {
                 transform: 'scale(1.05)',
                 boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
                 border: '1px solid #00ABE4'
