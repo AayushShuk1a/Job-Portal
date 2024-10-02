@@ -20,7 +20,7 @@ const JobCard = ({ job, onClick }) => {
       <CardMedia
         component="img"
         sx={{ width: { xs: '100%', sm: '30%' }, height: { xs: '150px', sm: 'auto' }, objectFit: 'cover' }}
-        image={job.image}
+        image={job.img_url}
         alt="Company Logo"
       />
 
@@ -29,7 +29,7 @@ const JobCard = ({ job, onClick }) => {
         <CardContent sx={{ flex: '1 0 auto', paddingBottom: '15px !important' }}>
           {/* Job Title (Position) */}
           <Typography component="div" variant="h6" sx={{ marginBottom: 0.5 }}>
-            {job.position} || {job.companyName}
+            {job.role} || {job.company_name}
           </Typography>
 
           {/* Location */}
@@ -46,7 +46,7 @@ const JobCard = ({ job, onClick }) => {
             sx={{ display: 'flex', alignItems: 'center', marginBottom: 1, fontSize: '0.95rem' }}
           >
             <CalendarTodayIcon sx={{ marginRight: 1, fontSize: '1rem' }} />
-            Date Posted: {job.datePosted}
+            Date Posted: {job.postingDate}
           </Typography>
 
           {/* Job Type, Salary, Experience with Border Styling */}
@@ -58,7 +58,7 @@ const JobCard = ({ job, onClick }) => {
               }}}>
               <Typography fontWeight="bold" sx={{ fontSize: '0.80rem' }}>Job Type</Typography>
               <Typography variant="body2" sx={{ color: '#73666d', fontSize: '0.8rem' }}>
-                {job.jobType}
+                {job.employmentType}
               </Typography>
             </Paper>
 
@@ -82,7 +82,7 @@ const JobCard = ({ job, onClick }) => {
             }}>
               <Typography fontWeight="bold" sx={{ fontSize: '0.8rem' }}>Expected Salary</Typography>
               <Typography variant="body2" sx={{ color: '#73666d', fontSize: '0.8rem' }}>
-                {job.expectedSalary}
+                {job.salaryMin}-{job.salaryMax}
               </Typography>
             </Paper>
           </Box>

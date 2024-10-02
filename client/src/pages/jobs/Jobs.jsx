@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import JobDetails from './JobDetails'
 import "./jobs.css"
 import ProgressBar from './ProgressBar'

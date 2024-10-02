@@ -4,11 +4,11 @@ import { Grid, Card, CardContent, Typography, Box, CardMedia, List, ListItem, Bu
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import PaidIcon from '@mui/icons-material/Paid';  // Salary Icon
+import PaidIcon from '@mui/icons-material/Paid'; 
 
 const JobDetails = () => {
   const location = useLocation();
-  const { job } = location.state || {}; // Access the job data passed via state
+  const { job } = location.state || {};
 
   if (!job) {
     return <Typography>No job details available.</Typography>;
@@ -21,8 +21,8 @@ const JobDetails = () => {
         <CardMedia
           component="img"
           sx={{ height: { xs: 150, md: 200 }, objectFit: 'cover' }}
-          image={job.image}
-          alt={job.companyName}
+          image={job.img_url}
+          alt={job.company_name}
         />
 
         <CardContent>
@@ -35,7 +35,7 @@ const JobDetails = () => {
               marginBottom: '20px',
             }}
           >
-            {job.position} - {job.companyName}
+            {job.role} - {job.company_name}
           </Typography>
 
           {/* Apply Button */}
@@ -82,7 +82,7 @@ const JobDetails = () => {
                   color="text.secondary"
                   sx={{ fontSize: '16px', fontWeight: '600' }}
                 >
-                  {job.jobType || 'Not specified'}
+                  {job.employmentType || 'Not specified'}
                 </Typography>
               </Box>
             </Grid>
@@ -95,7 +95,7 @@ const JobDetails = () => {
                   color="text.secondary"
                   sx={{ fontSize: '16px', fontWeight: '600' }}
                 >
-                  {job.datePosted || 'Not specified'}
+                  {job.postingDate || 'Not specified'}
                 </Typography>
               </Box>
             </Grid>
@@ -108,14 +108,14 @@ const JobDetails = () => {
                   color="text.secondary"
                   sx={{ fontSize: '16px', fontWeight: '600' }}
                 >
-                  {job.expectedSalary || 'Not specified'}
+                  {job.salaryMin || 'Not specified'}-{job.salaryMax || 'Not specified'}
                 </Typography>
               </Box>
             </Grid>
           </Grid>
 
           {/* About the Company */}
-          {job.companyAbout && (
+          {job.aboutCompany && (
             <>
               <Typography
                 variant="h6"
@@ -136,7 +136,7 @@ const JobDetails = () => {
                   lineHeight: '1.6',
                 }}
               >
-                {job.companyAbout}
+                {job.aboutCompany}
               </Typography>
             </>
           )}

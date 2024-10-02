@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Card, CardContent, Box, Typography, Divider, IconButton, Grid } from '@mui/material';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder'; // Unmarked icon
 import BookmarkIcon from '@mui/icons-material/Bookmark'; // Marked icon
@@ -114,12 +115,14 @@ const JobProgress = ({ jobStage, completionDates }) => {
 
 // Main ProgressBar component
 export default function ProgressBar() {
+  const location = useLocation();
+  const { job } = location.state || {};
   const jobStage = 'Interview'; // The current stage of the job
   const completionDates = ['2024-08-01', '2024-08-05', '2024-08-10', null]; // Dates for completed steps
 
   return (
     <Box sx={{ ml:{ xs: 0, sm: 0, md: "20px" }}}>
-      <JobProgress jobStage={jobStage} completionDates={completionDates} />
+      <JobProgress jobStage={job.jobStatus} completionDates={completionDates} />
     </Box>
   );
 }
