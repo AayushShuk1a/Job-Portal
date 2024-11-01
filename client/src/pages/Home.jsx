@@ -88,11 +88,11 @@ const Home = () => {
       updatedJobs = updatedJobs.filter(job => {
         const experienceRange = job.experienceRequired;
         const [minJob, maxJob] = experienceRange.split('-').map(exp => {
-          if (exp === '+') return 5; // Treat '5+' as 5 for comparison
+          if (exp === '+') return 5; 
           return parseInt(exp);
         });
   
-        // Eligibility check based on job experience range
+        
         let isEligible;
         if (maxJob === 5) {
           // If job requires "5+", allow candidates with experience >= 5

@@ -49,17 +49,17 @@ public class Jobs {
 
 
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "required_skills", joinColumns = @JoinColumn(name = "job_id"))
-    @Column(name = "required_skills", columnDefinition = "TEXT")
+    @Column(name = "required_skills")
     private List<String> requiredSkills;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "key_responsibilities", joinColumns = @JoinColumn(name = "job_id"))
     @Column(name = "key_responsibilities", columnDefinition = "TEXT")
     private List<String> keyResponsibilities;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "requirements", joinColumns = @JoinColumn(name = "job_id"))
     @Column(name = "requirements", columnDefinition = "TEXT")
     private List<String> requirements;
@@ -180,6 +180,8 @@ public class Jobs {
     public void setJobStatus(JobStatus jobStatus) {
         this.jobStatus = jobStatus;
     }
+
+
 
     public List<String> getRequiredSkills() {
         return requiredSkills;
