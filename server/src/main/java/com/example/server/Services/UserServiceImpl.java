@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Optional;
 
 
 @Service
@@ -29,5 +32,22 @@ public class UserServiceImpl implements UserServices{
         }
         users.setPassword(passwordEncoder.encode(users.getPassword()));
         return userRepository.save(users);
+    }
+
+    @Override
+    public Optional<Users> findByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public void updateUser(Optional<Users> user) {
+        user.get().setPassword(passwordEncoder.encode(user.get().getPassword()));
+        userRepository.save(user.get());
+    }
+
+    @Override
+    @Transactional
+    public void deleteUserByUsername(String username) {
+        userRepository.deleteByUsername(username);
     }
 }
