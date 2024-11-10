@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Container, Grid, TextField, Typography, Box, Link, Card } from '@mui/material';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
+import { Close } from '@mui/icons-material';
+import {getToken, setToken} from "./token"
 
 function Login() {
     const [username,setUsername]=useState   ("");
     const [password,setPassword]=useState("");
+    const [error, setError] = useState("");
     const navigate=useNavigate();
 
     const handleUsernameChange=(e)=>setUsername(e.target.value);
@@ -14,7 +17,7 @@ function Login() {
     const handleSubmit=async()=>{
 
         if(!username||!password){
-            alert("Please enter details");
+            setError("Please enter details");
         }
 
         const loginData={username,password};
@@ -30,18 +33,33 @@ function Login() {
             if(response.ok){
                 const token=await response.text();
                 
-                localStorage.setItem('authToken',token);
+                setToken(token, 60);
                 alert("Login Success");
                 navigate("/");
+            }else{
+                setError(await response.text());
             }
 
         }catch(error){
             console.error('Error during login:', error);
-            alert('An error occurred. Please try again.');
+            setError(error);
         }
         
 
     }
+
+
+    const handleClose=()=>{
+        setError("");
+    }
+
+    useEffect(() => {
+        const token = getToken();
+        if (!token) {
+            // Redirect to login if token is expired or missing
+            navigate("/login")
+        }
+    }, []);
 
 
     return (
@@ -73,6 +91,25 @@ function Login() {
                             </Typography>
 
                             <Typography variant="body1">Please login to your account</Typography>
+                            {error && <div style={{ backgroundColor: '#f8d0c8', width: '91%', padding: '0px 20px', marginTop: '5px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderRadius: '5px' }}>
+
+                                <p style={{ color: '#896b66' }}>{error}</p>
+                                <div
+                                    onClick={handleClose}
+                                    style={{
+                                        cursor: 'pointer',
+                                        width: '24px',
+                                        height: '24px',
+                                        borderRadius: '50%',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        backgroundColor: '#ff5f56', // Red background for the circle
+                                    }}
+                                >
+                                    <Close style={{ fontSize: '16px', color: 'white' }} />
+                                </div>
+                            </div>}
 
                             {/* Username Input */}
                             <TextField
