@@ -19,8 +19,9 @@ import java.util.Optional;
 
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/users")   
 @Slf4j
+@CrossOrigin(origins = "http://localhost:5173")
 public class UserController {
 
     @Autowired
